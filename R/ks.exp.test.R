@@ -1,5 +1,6 @@
 ks.exp.test<-function(x, nrepl=2000)
 {
+DNAME <- deparse(substitute(x))
 l<-0
 n<-length(x)
 y<-x/mean(x)
@@ -20,7 +21,7 @@ T<-max(m1,m2)
 if (T>t) l=l+1
 }
 p.value<-l/nrepl
-RVAL<-list(statistic=c(KSn=t), p.value=p.value, method="Kolmogorov-Smirnov test for exponentiality")
+RVAL<-list(statistic=c(KSn=t), p.value=p.value, method="Kolmogorov-Smirnov test for exponentiality",data.name = DNAME)
 class(RVAL)<-"htest"
 return(RVAL)
 }
