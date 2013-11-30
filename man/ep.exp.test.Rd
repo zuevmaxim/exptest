@@ -6,17 +6,19 @@
   see e.g. Henze and Meintanis (2005, Sec. 2.8.1).
 }
 \usage{
-ep.exp.test(x)
+ep.exp.test(x, simulate.p.value=FALSE, nrepl=2000)
 }
 \arguments{
   \item{x}{a numeric vector of data values.} %Missing values are allowed.
+  \item{simulate.p.value}{a logical value indicating whether to compute p-values by Monte Carlo simulation.}
+  \item{nrepl}{the number of replications in Monte Carlo simulation.}
 }
 \details{The Epps and Pulley test is a test for the composite hypothesis of exponentiality. 
 The test statistic is 
 \deqn{
 EP_n = (48n)^{1/2} \left(\frac1n\sum_{j=1}^n\exp(-Y_j)-\frac12\right),
 }
-where \eqn{Y_j=X_j/\overline{X}}. The p-value is computed from the limit null distribution: \eqn{EP_n} is asymptotically standard normal (see, e.g., Henze and Meintanis (2005, Sec. 2.8.1).
+where \eqn{Y_j=X_j/\overline{X}}. \eqn{EP_n} is asymptotically standard normal (see, e.g., Henze and Meintanis (2005, Sec. 2.8.1).
 }
 \value{
   A list with class "htest" containing the following components: 
@@ -27,7 +29,7 @@ where \eqn{Y_j=X_j/\overline{X}}. The p-value is computed from the limit null di
 }
 \references{Henze, N. and Meintanis, S.G. (2005): Recent and classical tests for exponentiality: a partial review with comparisons. --- Metrika, vol. 61, pp. 29--45.
 }
-\author{Ruslan Pusev and Maxim Yakovlev}
+\author{Alexey Novikov, Ruslan Pusev and Maxim Yakovlev}
 
 %\seealso{\code{\link[ctest]{shapiro.test}} for performing the Shapiro-Wilk test for normality. 
 %\code{\link{cvm.test}}, \code{\link{lillie.test}}, 
@@ -36,6 +38,6 @@ where \eqn{Y_j=X_j/\overline{X}}. The p-value is computed from the limit null di
 
 \examples{
 ep.exp.test(rexp(100))
-ep.exp.test(runif(100, min = 50, max = 100))
+ep.exp.test(runif(100, min = 0, max = 1))
 }
 \keyword{htest}

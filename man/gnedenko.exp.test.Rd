@@ -6,11 +6,13 @@
   see e.g. Ascher (1990).
 }
 \usage{
-gnedenko.exp.test(x, R=length(x)/2)
+gnedenko.exp.test(x, R=length(x)/2, simulate.p.value=FALSE, nrepl=2000)
 }
 \arguments{
   \item{x}{a numeric vector of data values.} %Missing values are allowed.
   \item{R}{a parameter of the test (see below).}
+  \item{simulate.p.value}{a logical value indicating whether to compute p-values by Monte Carlo simulation.}
+  \item{nrepl}{the number of replications in Monte Carlo simulation.}
 }
 \details{The test is based on the following statistic:
 \deqn{
@@ -28,7 +30,7 @@ Under exponentiality, \eqn{Q_n(R)} has an F distribution with \eqn{2R}  and \eqn
 }
 \references{Ascher, S. (1990): A survey of tests for exponentiality. --- Communications in Statistics -- Theory and Methods, vol. 19, pp. 1811--1825.
 }
-\author{Ruslan Pusev and Maxim Yakovlev}
+\author{Alexey Novikov, Ruslan Pusev and Maxim Yakovlev}
 
 %\seealso{\code{\link[ctest]{shapiro.test}} for performing the Shapiro-Wilk test for normality. 
 %\code{\link{cvm.test}}, \code{\link{lillie.test}}, 

@@ -27,11 +27,11 @@ The p-value is computed from the limit null distribution. Under exponentiality, 
 \deqn{
 \sqrt{n}S_n\stackrel{d}{\rightarrow}\mathcal N\left(0,\frac{52}{1125}\right)
 }
-(see, Volkova (2010).
+(see, Volkova (2010)).
 }
 \value{
   A list with class "htest" containing the following components: 
-  \item{statistic}{the value of the Gini statistic.}
+  \item{statistic}{the value of the test statistic.}
   \item{p.value }{the p-value for the test.}
   \item{method}{the character string "Test for exponentiality based on Rossberg characterization".}
   \item{data.name}{a character string giving the name(s) of the data.} 

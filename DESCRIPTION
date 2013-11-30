@@ -1,12 +1,12 @@
 Package: exptest
-Version: 1.1
-Date: 2013-09-17
+Version: 1.2
+Date: 2013-11-30
 Title: Tests for Exponentiality
 Author: Alexey Novikov, Ruslan Pusev, Maxim Yakovlev
-Maintainer: Ruslan Pusev <Ruslan.Pusev@math.spbu.ru>
+Maintainer: Ruslan Pusev <r.pusev@spbu.ru>
 Description: Tests for the composite hypothesis of exponentiality
 License: GPL (>= 3)
-Packaged: 2013-09-16 21:08:36 UTC; Ruslan
+Packaged: 2013-11-30 18:21:07 UTC; Ruslan
 NeedsCompilation: no
 Repository: CRAN
-Date/Publication: 2013-09-16 23:30:32
+Date/Publication: 2013-12-01 07:58:31

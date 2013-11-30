@@ -6,17 +6,19 @@
   see e.g. Henze and Meintanis (2005, Sec. 2.5).
 }
 \usage{
-co.exp.test(x)
+co.exp.test(x, simulate.p.value=FALSE, nrepl=2000)
 }
 \arguments{
   \item{x}{a numeric vector of data values.} %Missing values are allowed.
+  \item{simulate.p.value}{a logical value indicating whether to compute p-values by Monte Carlo simulation.}
+  \item{nrepl}{the number of replications in Monte Carlo simulation.}
 }
 \details{The Cox and Oakes test is a test for the composite hypothesis of exponentiality. 
 The test statistic is 
 \deqn{
 CO_n = n+\sum_{j=1}^n(1-Y_j)\log Y_j,
 }
-where \eqn{Y_j=X_j/\overline{X}}. The p-value is computed from the limit null distribution: \eqn{(6/n)^{1/2}(CO_n/\pi)} is asymptotically standard normal (see, e.g., Henze and Meintanis (2005, Sec. 2.5).
+where \eqn{Y_j=X_j/\overline{X}}. \eqn{(6/n)^{1/2}(CO_n/\pi)} is asymptotically standard normal (see, e.g., Henze and Meintanis (2005, Sec. 2.5)).
 }
 \value{
   A list with class "htest" containing the following components: 
@@ -27,7 +29,7 @@ where \eqn{Y_j=X_j/\overline{X}}. The p-value is computed from the limit null di
 }
 \references{Henze, N. and Meintanis, S.G. (2005): Recent and classical tests for exponentiality: a partial review with comparisons. --- Metrika, vol. 61, pp. 29--45.
 }
-\author{Ruslan Pusev and Maxim Yakovlev}
+\author{Alexey Novikov, Ruslan Pusev and Maxim Yakovlev}
 
 %\seealso{\code{\link[ctest]{shapiro.test}} for performing the Shapiro-Wilk test for normality. 
 %\code{\link{cvm.test}}, \code{\link{lillie.test}}, 
@@ -36,6 +38,6 @@ where \eqn{Y_j=X_j/\overline{X}}. The p-value is computed from the limit null di
 
 \examples{
 co.exp.test(rexp(100))
-co.exp.test(runif(100, min = 50, max = 100))
+co.exp.test(runif(100, min = 0, max = 1))
 }
 \keyword{htest}
