@@ -43,7 +43,7 @@ bartlett.exp.test <- function(x, simulate.p.value=FALSE, nrepl=2000)
     }
     else
     {
-        p.value <- if (B < chi) 1 else 0
+        p.value <- if (B < chi)1 else 0
     }
 
     RVAL <- list(statistic = c(Bn = B), p.value = p.value, method = "Test for exponentiality based on Bartlet-Moran's characterization", data.name = DNAME)
